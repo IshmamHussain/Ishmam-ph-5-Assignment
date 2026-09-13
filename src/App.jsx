@@ -1,9 +1,10 @@
+import Navbar from "./components/Navbar";
 function App() {
   return (
-    <div className="min-h-screen p-10">
-      <h1 className="text-5xl font-bold brand-gradient-text">Dev Stack</h1>
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="h-[200vh]"></div>
     </div>
-  )
+  );
 }
-
-export default App
+export default App;
