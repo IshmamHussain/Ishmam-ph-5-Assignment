@@ -5,6 +5,12 @@
   --brand-gradient: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
 }
 
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 .brand-gradient-bg {
   background-image: var(--brand-gradient);
 }
