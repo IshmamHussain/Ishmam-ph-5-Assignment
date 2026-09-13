@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechnologyGrid from "./components/TechnologyGrid";
+import YourStack from "./components/YourStack";
 
 function App() {
   const [technologies, setTechnologies] = useState([]);
@@ -19,7 +20,19 @@ function App() {
   }, []);
 
   const handleAdd = (tech) => {
+    const alreadyAdded = stack.some((item) => item.id === tech.id);
+    if (alreadyAdded) {
+      return;
+    }
     setStack([...stack, tech]);
+  };
+
+  const handleRemove = (id) => {
+    setStack(stack.filter((item) => item.id !== id));
+  };
+
+  const handleRemoveAll = () => {
+    setStack([]);
   };
 
   return (
@@ -35,16 +48,26 @@ function App() {
           Pick one technology per category to build your ideal stack.
         </p>
 
-        <div className="mt-10">
-          {loading ? (
-            <p className="text-slate-500">Loading technologies...</p>
-          ) : (
-            <TechnologyGrid
-              technologies={technologies}
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+          <div className="lg:col-span-3">
+            {loading ? (
+              <p className="text-slate-500">Loading technologies...</p>
+            ) : (
+              <TechnologyGrid
+                technologies={technologies}
+                stack={stack}
+                onAdd={handleAdd}
+              />
+            )}
+          </div>
+
+          <div className="lg:col-span-1">
+            <YourStack
               stack={stack}
-              onAdd={handleAdd}
+              onRemove={handleRemove}
+              onRemoveAll={handleRemoveAll}
             />
-          )}
+          </div>
         </div>
       </section>
     </div>
