@@ -2,6 +2,10 @@
 
 A web app for exploring development technologies and assembling your own stack. Browse frontend frameworks, backend runtimes, databases, languages and tooling, then pick the ones you want and keep them together in a single panel.
 
+**Live site:** https://ph-5-assignment-devstack-ishmam.netlify.app
+
+**Repository:** https://github.com/IshmamHussain/Ishmam-ph-5-Assignment
+
 ## Technology used
 
 - React 19 with Vite
