@@ -1,6 +1,12 @@
 function TechnologyCard({ tech, isAdded, onAdd }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col shadow-sm">
+    <div
+      className={
+        isAdded
+          ? "bg-white border-2 border-pink-500 rounded-xl p-5 flex flex-col shadow-sm transition-colors"
+          : "bg-white border-2 border-slate-200 rounded-xl p-5 flex flex-col shadow-sm transition-colors"
+      }
+    >
       <div className="flex items-start justify-between">
         <img src={tech.icon} alt={tech.name} className="w-9 h-9 object-contain" />
         <span className="text-xs px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-medium">
