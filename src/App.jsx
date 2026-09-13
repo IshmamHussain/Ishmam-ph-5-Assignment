@@ -1,10 +1,13 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 function App() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="h-[200vh]"></div>
+      <Hero />
     </div>
   );
 }
+
 export default App;
