@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import TechnologyGrid from "./components/TechnologyGrid";
 import YourStack from "./components/YourStack";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
 function App() {
   const [technologies, setTechnologies] = useState([]);
@@ -62,7 +63,7 @@ function App() {
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
           <div className="lg:col-span-3">
             {loading ? (
-              <p className="text-slate-500">Loading technologies...</p>
+              <Loader />
             ) : (
               <TechnologyGrid
                 technologies={technologies}
